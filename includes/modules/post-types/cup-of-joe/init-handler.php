@@ -31,6 +31,7 @@ function create_cup_of_joe_post_type() {
 			'has_archive' => true,
 			'menu_icon' => 'dashicons-format-status',
 			'description' => 'Manage Cups of Joe',
+			'supports'	=> array('title', 'editor', 'thumbnail', 'revisions'),
 		)
 	);
 }
