@@ -10,6 +10,15 @@ define('SHRM_POSTTYPE_PATH', SHRM_PLUGIN_PATH . 'includes/modules/post-types/');
 
 
 //************************************************************************************************
+// Section: 		SHRM Slide Post Type
+// Description:		Module that handles the custom post type 'shrm-slide'
+//************************************************************************************************
+
+require_once(SHRM_POSTTYPE_PATH . 'shrm-slide/init-handler.php');
+
+
+
+//************************************************************************************************
 // Section: 		Cup of Joe Post Type
 // Description:		Module that handles the custom post type 'cup-of-joe'
 //************************************************************************************************

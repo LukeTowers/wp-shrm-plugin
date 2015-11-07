@@ -32,7 +32,7 @@ function create_media_item_post_type() {
 			'menu_icon' => 'dashicons-megaphone',
 			'description' => 'Manage Media Items',
 			'supports'	=> array('title', 'editor', 'thumbnail', 'revisions'),
-			'rewrite'	=> array('slug'=>'media-room'),
+			'rewrite'	=> array('slug'=>'about-us/media-room'),
 		)
 	);
 }

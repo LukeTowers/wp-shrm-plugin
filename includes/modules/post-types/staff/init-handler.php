@@ -26,9 +26,9 @@ function create_staff_post_type() {
 			    'menu_name'				=> 'Staff'
 			),
 			'public' => true,
-			'exclude_from_search'	=> false,
+			'exclude_from_search'	=> true,
 			'show_ui' => true,
-			'has_archive' => true,
+			'has_archive' => false,
 			'menu_icon' => 'dashicons-groups',
 			'description' => 'Manage Staff',
 			'supports'	=> array('title', 'editor', 'thumbnail', 'revisions', 'page-attributes'),
