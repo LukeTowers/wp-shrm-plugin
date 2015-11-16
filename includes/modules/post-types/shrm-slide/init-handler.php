@@ -91,29 +91,16 @@ function generate_shrm_slider_html($args = array()) {
 				// Skip displaying this slide
 				continue;
 			}
-			
-			
+			$output .= '<div class="shrm-slide">';
 				$slide_options = get_post_meta(get_the_ID(), 'slide_options', true);
-				if (!empty($slide_options['url'])) {
-					$output .= '<div class="shrm-slide"><a href="' . $slide_options['url'] . '" target="' . @$slide_options['url_target'] . '">';
-				}
-				$output .= '<img src="' . $image[0] . '">';
-				if (!empty($slide_options['url'])) { $output .= '</a></div>'; }
 				
-				/* if (empty($slide_options['hide_title']) || $slide_options['hide_title'] !== 'true') {
-					$title = get_the_title();
-					if (!empty($title)) {
-						$output .= '<div class="title">' . $title . '</div>';
-					}
-				} */
-				// Load the caption - currently disabled until styling for this can be done
-				/*
-					$caption = get_the_excerpt();
-					if (!empty($caption)) {
-						$output .= '<div class="caption">' . $caption . '</div>';
-					}
-				*/
-			/* $output .= '</div>'; */
+				if (!empty($slide_options['url'])) { $output .= '<a href="' . $slide_options['url'] . '" target="' . @$slide_options['url_target'] . '">'; }
+				
+				$output .= '<img src="' . $image[0] . '">';
+				
+				if (!empty($slide_options['url'])) { $output .= '</a>'; }
+				
+			$output .= '</div>';
 		endwhile; 
 		
 		$output .= '<a href="#" id="prevslide" class="slide-control"></a>';
@@ -132,7 +119,7 @@ function generate_shrm_slider_html($args = array()) {
 function load_shrm_slider_resources() {
 	// Need to be dynamic to support loading the slider where ever displayed from
 	if (is_front_page()) {
-		wp_enqueue_style('shrm-slider', SHRM_PLUGIN_URL . "includes/css/shrm-slider.css");
+		wp_enqueue_style('shrm-slider', SHRM_PLUGIN_URL . "includes/css/shrm-slider.min.css");
 		wp_enqueue_script('cycle2', SHRM_PLUGIN_URL . 'includes/js/jquery.cycle2.min.js', array('jquery'), '2.1.6', false);
 		
 		require_once(SHRM_PLUGIN_PATH . 'includes/modules/mobile-detection.php');

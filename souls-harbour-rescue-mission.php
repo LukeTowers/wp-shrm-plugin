@@ -37,3 +37,9 @@ require_once(SHRM_PLUGIN_PATH . 'includes/modules/post-types/post-type-manager.p
 
 // Disables GF file upload security .htaccess file. Maybe add to main plugin as a fusion only type of setting?
 add_filter( 'gform_upload_root_htaccess_rules', '__return_false' );
+
+
+// Disables XML-RPC functionality, we don't use it
+add_filter('xmlrpc_enabled', '__return_false');
+remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'wlwmanifest_link');

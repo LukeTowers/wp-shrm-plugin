@@ -26,14 +26,6 @@ function add_shrm_slide_metaboxes($post) {
 		'normal',					// Context of the metabox
 		'high'						// Priority of the metabox being displayed
 	);
-	add_meta_box(
-		'slide_options_metabox',		// ID of the metabox
-		'Slide Options',				// Title of the metabox
-		'render_slide_options_metabox',// Callback function to print out the html for the metabox
-		'shrm-slide',					// "Screen" to display metabox on, i.e. 'schedules' post type
-		'side',							// Context of the metabox
-		'default'						// Priority of the metabox being displayed
-	);
 }
 add_action('add_meta_boxes_shrm-slide', 'add_shrm_slide_metaboxes');
 
@@ -43,7 +35,6 @@ function save_shrm_slide($slide_id) {
 	$slide_options = array(
 		'url'		=>	@$_POST['slide_url'],
 		'url_target'=>	@$_POST['url_target'],
-		'hide_title'=>	@$_POST['hide_title'],
 	);
 	
 	update_post_meta($slide_id, 'slide_options', $slide_options);
@@ -58,20 +49,11 @@ function render_slide_url_metabox($slide) {
 	<p>
 		<label for="slide_url">Slide URL:</label>
 		<input type="text" name="slide_url" id="slide_url" value="<?php echo @$slide_options['url']; ?>">
+		<small>Note: If the URL is to an external site (i.e. not a page on <?php echo site_url(); ?>), then it must start with either http:// or https://. If it is a link a page on the current site, it may remove the domain name and start with a forward slash ('/'). Example: the page "Get Involved" would normally be "http://www.shrmsk.com/get-involved/", but because it is on this site, you may use the URL "/get-involved/"</small>
 	</p>
 	<p>
 		<label for="url_target">Open link in new tab:</label>
 		<input type="checkbox" name="url_target" id="url_target" value="_blank" <?php if (!empty($slide_options['url_target'])) { checked($slide_options['url_target'], '_blank'); } ?>>
-	</p>
-	<?php
-}
-
-function render_slide_options_metabox($slide) {
-	$slide_options = get_post_meta($slide->ID, 'slide_options', true)
-	?>
-	<p>
-		<label for="hide_title">Don't show the title:</label>
-		<input type="checkbox" name="hide_title" id="hide_title" value="true" <?php if (!empty($slide_options['hide_title'])) { checked($slide_options['hide_title'], 'true'); } ?>>
 	</p>
 	<?php
 }
