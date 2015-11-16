@@ -28,6 +28,15 @@ require_once(SHRM_POSTTYPE_PATH . 'cup-of-joe/init-handler.php');
 
 
 //************************************************************************************************
+// Section: 		Ways To Donate Post Type
+// Description:		Module that handles the custom post type 'wtd'
+//************************************************************************************************
+
+require_once(SHRM_POSTTYPE_PATH . 'wtd/init-handler.php');
+
+
+
+//************************************************************************************************
 // Section: 		Media Item Post Type
 // Description:		Module that handles the custom post type 'media-item'
 //************************************************************************************************

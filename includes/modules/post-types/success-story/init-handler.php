@@ -32,7 +32,7 @@ function create_success_story_post_type() {
 			'menu_icon' => 'dashicons-thumbs-up',
 			'description' => 'Manage Success Stories',
 			'supports'	=> array('title', 'editor', 'thumbnail', 'revisions'),
-			'rewrite'	=> array('slug'=>'success-stories'),
+			'rewrite'	=> array('slug'=>'blog/success-stories'),
 		)
 	);
 }
