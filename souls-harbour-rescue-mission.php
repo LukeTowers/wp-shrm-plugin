@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Souls Harbour Rescue Mission
-Plugin URI: http://www.shrmsk.com/
+Plugin URI: https://www.shrmsk.com/
 Description: Custom plugin for Soul Harbour Rescue Mission's site
-Version: 0.0.1
-Author: Fusion Online
-Author URI: http://fusiononline.ca
+Version: 1.0.0
+Author: Look Agency
+Author URI: https://www.lookagency.com/
 Plugin Prefix: SHRM (Souls Harbour Rescue Mission)
 */
 
