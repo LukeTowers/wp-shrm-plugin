@@ -1,17 +1,17 @@
 <?php
 /*
 Plugin Name: Souls Harbour Rescue Mission
-Plugin URI: https://www.shrmsk.com/
+Plugin URI: http://www.shrmsk.com/
 Description: Custom plugin for Soul Harbour Rescue Mission's site
-Version: 1.0.0
-Author: Look Agency
-Author URI: https://www.lookagency.com/
+Version: 1.0.1
+Author: Luke Towers
+Author URI: https://luketowers.ca
 Plugin Prefix: SHRM (Souls Harbour Rescue Mission)
 */
 
 //************************************************************************************************
 // Section: 		Plugin Setup
-// Description:		
+// Description:
 //************************************************************************************************
 
 // Setup plugin path
